@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project - ProjectFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="nav-brand">
+            <h2>ProjectFlow</h2>
+        </div>
+
+        <div class="nav-actions">
+
+            <span id="welcomeUser">
+                Welcome
+            </span>
+
+            <button
+                class="btn btn-secondary"
+                id="dashboardBtn">
+                Dashboard
+            </button>
+
+            <button
+                class="btn btn-danger"
+                id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Project Header -->
+        <section class="project-header">
+
+            <div>
+
+                <h1 id="projectTitle">
+                    Project
+                </h1>
+
+                <p id="projectDescription">
+                    Loading project...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Stats -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div>
+                    <h3 id="memberCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Members
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📋
+                </div>
+
+                <div>
+                    <h3 id="taskCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Tasks
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📝
+                </div>
+
+                <div>
+                    <h3 id="todoCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Todo
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div>
+                    <h3 id="completedCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Completed
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Create Task Button -->
+        <section class="section-header">
+
+            <div>
+                <h2>
+                    Project Tasks
+                </h2>
+
+                <p>
+                    Manage tasks and collaborate with your team.
+                </p>
+            </div>
+
+            <button
+                class="btn btn-primary"
+                id="createTaskBtn">
+                + Create Task
+            </button>
+
+        </section>
+
+
+        <!-- Task Board -->
+        <section class="task-board">
+
+
+            <!-- Todo -->
+            <div class="task-column">
+
+                <div class="column-header">
+
+                    <h3>
+                        Todo
+                    </h3>
+
+                    <span
+                        class="column-count"
+                        id="todoColumnCount">
+                        0
+                    </span>
+
+                </div>
+
+                <div
+                    id="todoTasks"
+                    class="task-list">
+                </div>
+
+            </div>
+
+
+            <!-- In Progress -->
+            <div class="task-column">
+
+                <div class="column-header">
+
+                    <h3>
+                        In Progress
+                    </h3>
+
+                    <span
+                        class="column-count"
+                        id="progressColumnCount">
+                        0
+                    </span>
+
+                </div>
+
+                <div
+                    id="progressTasks"
+                    class="task-list">
+                </div>
+
+            </div>
+
+
+            <!-- Completed -->
+            <div class="task-column">
+
+                <div class="column-header">
+
+                    <h3>
+                        Completed
+                    </h3>
+
+                    <span
+                        class="column-count"
+                        id="completedColumnCount">
+                        0
+                    </span>
+
+                </div>
+
+                <div
+                    id="completedTasks"
+                    class="task-list">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Create Task Modal -->
+    <div
+        id="taskModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>
+                    Create New Task
+                </h2>
+
+                <button
+                    id="closeTaskModal"
+                    class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="taskForm">
+
+                <!-- Task Title -->
+                <div class="form-group">
+
+                    <label for="taskTitle">
+                        Task Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Enter task title"
+                        required>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="taskDescription"
+                        placeholder="Enter task description"
+                        rows="4">
+                    </textarea>
+
+                </div>
+
+
+                <!-- Priority -->
+                <div class="form-group">
+
+                    <label for="taskPriority">
+                        Priority
+                    </label>
+
+                    <select id="taskPriority">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option
+                            value="Medium"
+                            selected>
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Status -->
+                <div class="form-group">
+
+                    <label for="taskStatus">
+                        Status
+                    </label>
+
+                    <select id="taskStatus">
+
+                        <option
+                            value="Todo"
+                            selected>
+                            Todo
+                        </option>
+
+                        <option value="In Progress">
+                            In Progress
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Assign To -->
+                <div class="form-group">
+
+                    <label for="taskAssignedTo">
+                        Assign To
+                    </label>
+
+                    <select id="taskAssignedTo">
+
+                        <option value="">
+                            Unassigned
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Due Date -->
+                <div class="form-group">
+
+                    <label for="taskDueDate">
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="taskDueDate">
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelTaskBtn"
+                        class="btn btn-secondary">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        Create Task
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="project.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ProjectFlow - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVBAR
+    ========================================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-brand">
+
+            <span class="brand-icon-small">
+                📋
+            </span>
+
+            <span>
+                ProjectFlow
+            </span>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <span id="welcomeUser">
+                Welcome
+            </span>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ========================================
+         MAIN CONTAINER
+    ========================================= -->
+
+    <main class="dashboard-container">
+
+
+        <!-- ========================================
+             PAGE HEADER
+        ========================================= -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Project Dashboard
+                </h1>
+
+                <p>
+                    Manage your projects and tasks.
+                </p>
+
+            </div>
+
+
+            <button
+                id="openProjectModal"
+                class="primary-btn create-project-btn"
+            >
+                + Create Project
+            </button>
+
+        </div>
+
+
+        <!-- ========================================
+             STATISTICS
+        ========================================= -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📁
+                </div>
+
+                <div>
+
+                    <h3 id="projectCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Projects
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div>
+
+                    <h3 id="taskCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Tasks
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div>
+
+                    <h3 id="memberCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Members
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💬
+                </div>
+
+                <div>
+
+                    <h3 id="commentCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Comments
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ========================================
+             PROJECT SECTION
+        ========================================= -->
+
+        <section class="projects-section">
+
+
+            <div class="section-header">
+
+                <h2>
+                    My Projects
+                </h2>
+
+            </div>
+
+
+            <div
+                id="projectsContainer"
+                class="projects-grid"
+            >
+
+                <!-- Projects will appear here -->
+
+            </div>
+
+
+            <div
+                id="emptyProjects"
+                class="empty-state"
+            >
+
+                <div class="empty-icon">
+                    📂
+                </div>
+
+                <h3>
+                    No Projects Yet
+                </h3>
+
+                <p>
+                    Create your first project to get started.
+                </p>
+
+                <button
+                    id="emptyCreateBtn"
+                    class="primary-btn"
+                >
+                    + Create Your First Project
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================
+         CREATE PROJECT MODAL
+    ========================================= -->
+
+    <div
+        id="projectModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h2>
+                    Create New Project
+                </h2>
+
+                <button
+                    id="closeProjectModal"
+                    class="close-btn"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="projectForm">
+
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Enter project name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="projectDescription"
+                        placeholder="Enter project description"
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+                <p
+                    id="projectMessage"
+                    class="message"
+                ></p>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelProjectBtn"
+                        class="secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Create Project
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

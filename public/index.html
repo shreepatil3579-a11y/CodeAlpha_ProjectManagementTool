@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ProjectFlow - Project Management Tool</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="auth-container">
+
+
+        <!-- ========================================
+             BRAND SECTION
+        ========================================= -->
+
+        <div class="brand-section">
+
+            <div class="brand-icon">
+                📋
+            </div>
+
+            <h1>
+                ProjectFlow
+            </h1>
+
+            <p>
+                Manage projects, tasks and teams
+                in one place.
+            </p>
+
+        </div>
+
+
+        <!-- ========================================
+             AUTH CARD
+        ========================================= -->
+
+        <div class="auth-card">
+
+
+            <!-- LOGIN -->
+
+            <div id="loginSection">
+
+                <h2>
+                    Welcome Back
+                </h2>
+
+                <p class="auth-subtitle">
+                    Login to continue to your projects.
+                </p>
+
+
+                <form id="loginForm">
+
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Login
+                    </button>
+
+
+                    <p
+                        id="loginMessage"
+                        class="message"
+                    ></p>
+
+
+                </form>
+
+
+                <div class="switch-auth">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <button
+                        type="button"
+                        id="showRegister"
+                        class="link-btn"
+                    >
+                        Create Account
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div
+                id="registerSection"
+                class="hidden"
+            >
+
+                <h2>
+                    Create Account
+                </h2>
+
+                <p class="auth-subtitle">
+                    Register to start managing projects.
+                </p>
+
+
+                <form id="registerForm">
+
+
+                    <div class="form-group">
+
+                        <label for="registerUsername">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerUsername"
+                            placeholder="Enter username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="Enter email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Create password"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Register
+                    </button>
+
+
+                    <p
+                        id="registerMessage"
+                        class="message"
+                    ></p>
+
+
+                </form>
+
+
+                <div class="switch-auth">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <button
+                        type="button"
+                        id="showLogin"
+                        class="link-btn"
+                    >
+                        Login
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
